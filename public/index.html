@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script:wght@400..700&family=Kalnia+Glaze:wght@100..700&family=Sevillana&family=Tapestry&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- aos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- flowbite -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <!-- JIT SUPPORT, for using peer-* below -->
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+</head>
+
+<body>
+
+    <div id="home" class="container bg-white">
+        <!-- nav bar -->
+
+        <nav  class="bg-black fixed z-50 w-screen ">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-between">
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <!-- Mobile menu button-->
+                        <button type="button"
+                            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="absolute -inset-0.5"></span>
+                            <span class="sr-only">Open main menu</span>
+                            <!--
+                      Icon when menu is closed.
+          
+                      Menu open: "hidden", Menu closed: "block"
+                    -->
+                            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <!--
+                      Icon when menu is open.
+          
+                      Menu open: "block", Menu closed: "hidden"
+                    -->
+                            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div  class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                        <div class="flex flex-shrink-0 items-center">
+                            <img class="h-10 w-auto"
+                                src="https://www.shutterstock.com/image-vector/abstract-beauty-womens-dress-fashion-260nw-1960388344.jpg"
+                                alt="Your Company">
+                        </div>
+                        <div class="hidden sm:ml-6 sm:block">
+                            <div class="flex space-x-4">
+                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                <a href="#home" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                                    aria-current="page">Home</a>
+                                <a href="#shop"
+                                    class="rounded-md px-3 py-2 text-sm font-medium  text-white hover:bg-gray-700 hover:text-white">Shop</a>
+                                <a href="#gallery"
+                                    class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 hover:text-white">Gallery</a>
+                                <a href="#products"
+                                    class="rounded-md px-3 py-2 text-sm font-medium text-white  hover:bg-gray-700 hover:text-white">Products</a>
+                                <a href="#"
+                                    class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 hover:text-white">Blog</a>
+                                <a href="#"
+                                    class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 hover:text-white">Features</a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        <button type="button"
+                            class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                            <span class="absolute -inset-1.5"></span>
+                            <span class="sr-only">View notifications</span>
+
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                            </svg>
+                        </button>
+
+                        <!-- Profile dropdown -->
+                        <div class="relative ml-3">
+                            <div>
+                                <button type="button"
+                                    class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                    id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                    <span class="absolute -inset-1.5"></span>
+                                    <span class="sr-only">Open user menu</span>
+                                    <img class="h-8 w-8 rounded-full"
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81iX4Mo49Z3oCPSx-GtgiMAkdDop2uVmVvw&s"
+                                        alt="">
+                                </button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sm:hidden" id="mobile-menu">
+                <div class="space-y-1 px-2 pb-3 pt-2">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                        aria-current="page">Dashboard</a>
+                    <a href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+                    <a href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+                    <a href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+                </div>
+            </div>
+        </nav>
+
+        <div data-aos="fade-right" class="bg-cover bg-center h-screen"
+            style="background-image: url('https://images8.alphacoders.com/702/702152.jpg');">\
+
+            <h1 class="animate-pulse text-white text-6xl font-bold font-sans text-center mt-40">Fashion Can Be Bought. </h1>
+            <h2 class="animate-pulse  text-white text-6xl font-bold font-sans	text-center m-10 ">Style One Must Posses</h2>
+            <p class="animate-pulse  text-white text-xl font-bold text-center ">YOU EITHER KNOW PASSION OR YOU DON'T</p>
+
+            <button style="margin-left: 550px;"
+                class="bg-white text-center text-black mt-10  py-2 px-4 rounded-md home-shop">SHOP NOW</button>
+
+        </div>
+
+        <!-- slider -->
+
+        <!-- component -->
+        <!-- This is an example component -->
+        <div class="max-w-2xl mx-auto ml-5 mt-10">
+
+            <div id="default-carousel" class="relative" data-carousel="static">
+                <!-- Carousel wrapper -->
+                <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <span
+                            class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First
+                            Slide</span>
+                        <img src="https://www.beyoung.in/mobile/images/locations/Plain-tshirt-mobile-view.jpg"
+                            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+
+
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="https://img.paisawapas.com/ovz3vew9pw/2019/03/06132018/LIFESTYLEpush.jpg"
+                            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="https://cdn.shopify.com/s/files/1/0555/6351/8026/files/banner1_42030393-ccbb-4c28-8503-17df892556d7.jpg?v=1677822762"
+                            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                    </div>
+                </div>
+                <!-- Slider indicators -->
+                <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1"
+                        data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                        data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                        data-carousel-slide-to="2"></button>
+                </div>
+                <!-- Slider controls -->
+                <button type="button"
+                    class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                        <span class="hidden">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                        <span class="hidden">Next</span>
+                    </span>
+                </button>
+            </div>
+
+            <p class="mt-5 text-3xl text-pink-700 font-serif"><b> India's Top Online Clothing Hubs <br> Sell Your
+                    Fashion Cloth Here</b>
+            </p>
+            <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+        </div>
+
+
+        <div style="margin-left: 800px; margin-top: -400px;" class="bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl image w-96">
+            <img class="w-96 h-96" src="https://www.shutterstock.com/image-photo/photo-young-blonde-hair-shopaholic-600nw-2239068959.jpg
+" alt="">
+        </div>
+
+
+        <br><br><br>
+        <h1 id="shop" class="text-4xl	font-bold	text-red-800	font-serif	text-center">NEW COLLECTIONS</h1>
+        <br><br>
+        <div class="cards flex justify-evenly">
+
+            <div style="height: 150px;"
+                class="w-64  bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <a href="#">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTNthBJuj77UJrRsbgUt8W2zZKK6jODXUSB2d_ioPczdpVvCYr-8WaMFf-KzQ6aQ8EYtEjd5npbLT0aJwRkLvEUrdb5DQuGEneUZTMk8kEkPLf0mAGgN2Cq&usqp=CAE"
+                        alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+                    <div class="px-4 py-3 w-72">
+                        <span class="text-gray-400 mr-3 uppercase text-xs">LEVIS</span>
+                        <p class="text-lg font-bold text-black truncate block capitalize">Women's Stylish Design Dress
+                        </p>
+                        <div class="flex items-center">
+                            <p class="text-lg font-semibold text-black cursor-auto my-3">$199</p>
+                            <del>
+                                <p class="text-sm text-gray-600 cursor-auto ml-2">$109</p>
+                            </del>
+
+                        </div>
+                    </div>
+                    &nbsp;&nbsp;
+                    <a class="font-bold text-center text-xl  text-blue-900" href="">Buy Now</a>
+                
+                </a>
+            </div>
+
+            <div class="w-64 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <a href="#">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ3gLDw0s0d5iNGAPXzt81AxY0Mi_4suZlg3dZMutoUtz2TRhow1M2usN-bSwJulIyW7pZ-3nKDblPjqc6qWQRb7JhIRpoBKco1UzzifgirrG_WPb3QRf_S&usqp=CAE"
+                        alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+                    <div class="px-4 py-3 w-72">
+                        <span class="text-gray-400 mr-3 uppercase text-xs">LEVIS</span>
+                        <p class="text-lg font-bold text-black truncate block capitalize">Lymio Dresses for Women</p>
+                        <div class="flex items-center">
+                            <p class="text-lg font-semibold text-black cursor-auto my-3">$199</p>
+                            <del>
+                                <p class="text-sm text-gray-600 cursor-auto ml-2">$109</p>
+                            </del>
+
+                        </div>
+                    </div>
+                    &nbsp;&nbsp;
+                    <a class="font-bold text-center text-xl  text-blue-900" href="">Buy Now</a>
+                
+                </a>
+            </div>
+
+            <div class="w-64 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <a href="#">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTpTdY9up9t5AaVZHFxPCrBYQH3Qvj2-j59zesO6k9EptcMY5Q7bEPJK6EFTvHq72Ed-0sVLYNsq_x8Q7vhe_t_8Ci1oyvfDSr6unA3I2U&usqp=CAE"
+                        alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+                    <div class="px-4 py-3 w-72">
+                        <span class="text-gray-400 mr-3 uppercase text-xs">LEVIS</span>
+                        <p class="text-lg font-bold text-black truncate block capitalize">Full Flair Party Wear</p>
+                        <div class="flex items-center">
+                            <p class="text-lg font-semibold text-black cursor-auto my-3">$199</p>
+                            <del>
+                                <p class="text-sm text-gray-600 cursor-auto ml-2">$109</p>
+                            </del>
+
+                        </div>
+                    </div>
+                    &nbsp;&nbsp;
+                    <a class="font-bold text-center text-xl  text-blue-900" href="">Buy Now</a>
+                
+                </a>
+            </div>
+        </div><br><br>
+        <div class="cards flex justify-evenly">
+
+            <div style="height: 150px;"
+                class="w-64  bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <a href="#">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSTJC-qP5flmfl3Cq6zZms9iebCZ3TVCG3sHwDRrakr4PfBDANJW8bX8Z9rN0e9CPgNaVXZ2gA5lBZPQ8B78CT9HIo1abaV3e821HP_uOeb&usqp=CAE"
+                        alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+                    <div class="px-4 py-3 w-72">
+                        <span class="text-gray-400 mr-3 uppercase text-xs">LEVIS</span>
+                        <p class="text-lg font-bold text-black truncate block capitalize">Women's Stylish Design Dress
+                        </p>
+                        <div class="flex items-center">
+                            <p class="text-lg font-semibold text-black cursor-auto my-3">$199</p>
+                            <del>
+                                <p class="text-sm text-gray-600 cursor-auto ml-2">$109</p>
+                            </del>
+
+                        </div>
+                    </div>
+                    &nbsp;&nbsp;
+                    <a class="font-bold text-center text-xl  text-blue-900" href="">Buy Now</a>
+                
+                </a>
+            </div>
+
+            <div class="w-64 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <a href="#">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSbVaD0N_kdq8ENURMNupXSfMiPMW-6McMHWOa8E_cDOdVbXOUa_hVnyyBB6QhT5FOnRufb9J0WiD9hZfCFPJMhFHd6ziv5AT6HPZx3am3pqzq-KtadbLLe&usqp=CAE"
+                        alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+                    <div class="px-4 py-3 w-72">
+                        <span class="text-gray-400 mr-3 uppercase text-xs">LEVIS</span>
+                        <p class="text-lg font-bold text-black truncate block capitalize">Lymio Dresses for Women</p>
+                        <div class="flex items-center">
+                            <p class="text-lg font-semibold text-black cursor-auto my-3">$199</p>
+                            <del>
+                                <p class="text-sm text-gray-600 cursor-auto ml-2">$109</p>
+                            </del>
+
+                        </div>
+                    </div>
+                    &nbsp;&nbsp;
+                    <a class="font-bold text-center text-xl  text-blue-900" href="">Buy Now</a>
+                
+                </a>
+            </div>
+
+            <div class="w-64 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <a href="#">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTexILgSqB_d8A0IVo1B83h2Q4pPGyglJG0T0oZ_mQHJI1Qzzn13CWzpKlRSlm3mUxfDEfNljlc38Qvr6YCnpgPsP0ZgfsW4KFzID3lruCB&usqp=CAE"
+                        alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+                    <div class="px-4 py-3 w-72">
+                        <span class="text-gray-400 mr-3 uppercase text-xs">LEVIS</span>
+                        <p class="text-lg font-bold text-black truncate block capitalize">Full Flair Party Wear</p>
+                        <div class="flex items-center">
+                            <p class="text-lg font-semibold text-black cursor-auto my-3">$199</p>
+                            <del>
+                                <p class="text-sm text-gray-600 cursor-auto ml-2">$109</p>
+                            </del>
+
+                        </div>
+                    </div>
+                    &nbsp;&nbsp;
+                    <a class="font-bold text-center text-xl  text-blue-900" href="">Buy Now</a>
+                
+                </a>
+            </div>
+        </div><br><br>
+        <div class="cards flex justify-evenly">
+            <div class="w-64 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <a href="#">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRbpngULo9coNC0AFfmyQBaItUjuKu0AwWvuku7VtZWpV2UPodZUOX1XyuAPYYL7X2K2Z9elFvT_UBjmKmWtXSZfp_d9oc8-_pselKP6gM&usqp=CAE"
+                        alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+                    <div class="px-4 py-3 w-72">
+                        <span class="text-gray-400 mr-3 uppercase text-xs">LEVIS</span>
+                        <p class="text-lg font-bold text-black truncate block capitalize">Whitewhale Stylish Dress </p>
+                        <div class="flex items-center">
+                            <p class="text-lg font-semibold text-black cursor-auto my-3">$199</p>
+                            <del>
+                                <p class="text-sm text-gray-600 cursor-auto ml-2">$109</p>
+                            </del>
+
+                        </div>
+                    </div>
+                    &nbsp;&nbsp;
+                    <a class="font-bold text-center text-xl  text-blue-900" href="">Buy Now</a>
+                
+                </a>
+            </div>
+
+            <div class="w-64 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <a href="#">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSxH3DQceqHsOWi-9aeJPtLU-q8Mn99kXzBLyit2axo4Ms0PSXomfHIBHIXT9X_hN2PJKXbg3wB68du6IG8_nxsXZYsbEWcNuwpgzI2hCDluRSY96GXGbyS&usqp=CAE"
+                        alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+                    <div class="px-4 py-3 w-72">
+                        <span class="text-gray-400 mr-3 uppercase text-xs">LEVIS</span>
+                        <p class="text-lg font-bold text-black truncate block capitalize">
+                            Western Dresses for Women</p>
+                        <div class="flex items-center">
+                            <p class="text-lg font-semibold text-black cursor-auto my-3">$199</p>
+                            <del>
+                                <p class="text-sm text-gray-600 cursor-auto ml-2">$109</p>
+                                
+                            </del>
+                           
+
+                        </div>
+                    </div>&nbsp;&nbsp;
+                    <a class="font-bold text-center text-xl  text-blue-900" href="">Buy Now</a>
+                </a>
+            </div>
+
+            <div class="w-64 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <a href="#">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRP7O8R4adG4_qs-4EnbyJkNuUBWPj82n4d2Qd-FUm1NEl2JM4xjTkqaa5YQwiqsWN6aFipe535mlWV1-TU0f0uhkFbyuUxzksETD1N4A51T8Z4x3kVNOKQrA&usqp=CAE"
+                        alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+                    <div class="px-4 py-3 w-72">
+                        <span class="text-gray-400 mr-3 uppercase text-xs">LEVIS</span>
+                        <p class="text-lg font-bold text-black truncate block capitalize">
+                            Women's Western Dress </p>
+                        <div class="flex items-center">
+                            <p class="text-lg font-semibold text-black cursor-auto my-3">$199</p>
+                            <del>
+                                <p class="text-sm text-gray-600 cursor-auto ml-2">$109</p>
+                            </del>
+
+                        </div>
+                    </div>
+                    &nbsp;&nbsp;
+                    <a class="font-bold text-center text-xl  text-blue-900" href="">Buy Now</a>
+                
+                </a>
+            </div>
+        </div>
+
+        <br><br>
+
+
+        <!-- smallcards -->
+        <h1 class="text-4xl	font-bold	text-red-800	font-serif	text-center">FASHION ACCESSORIES</h1>
+
+        <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
+                <div class="rounded overflow-hidden shadow-lg">
+
+                    <a href="#"></a>
+                    <div class="relative">
+                        <a href="#">
+                            <img class="w-full"
+                                src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQxYXHKXh3177p791DVjurju4O0WGbcJ1psopjVw46i6_V2F9ZM6HIDe29hdNN1ZNfxu1O5vUyOwVzGo4S1y423EfaWpAXKPvywsjDV049tmcf3YP9utd8E&usqp=CAE"
+                                alt="Sunset in the mountains">
+                            <div
+                                class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                            </div>
+                        </a>
+                        <a href="#!">
+                            <div
+                                class="absolute bottom-0 left-0 bg-indigo-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                Shop Now
+                            </div>
+                        </a>
+
+                        <a href="!#">
+                            <div
+                                class="text-sm absolute top-0 right-0 bg-indigo-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                <span class="font-bold">27</span>
+                                <small>March</small>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-6 py-4">
+
+                        <a href="#"
+                            class="font-semibold text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out">Women
+                            Textured Bag New Korean Girl Fashion Messenger Bag Chain Shoulder Small ...</a>
+                        <p class="text-gray-500 text-sm">
+                            ₹2,306.40(€25.00)
+                        </p>
+                    </div>
+                    <div class="px-6 py-4 flex flex-row items-center">
+                        <span href="#" class="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
+                            <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256
+    c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128
+    c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span class="ml-1">6 mins ago</span></span>
+                    </div>
+                </div>
+                <div class="rounded overflow-hidden shadow-lg">
+                    <a href="#"></a>
+                    <div class="relative">
+                        <a href="#">
+                            <img class="w-full"
+                                src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ-961y0Yb0beRZ_9XBs-zwLSyFz_REtI19g_mYU0CYjSVXu-wD0dD06eCWBqRIoj31AK8c3awzh2p7obVETWyNN2ZOHIE7Yb9tO8GUeSKt&usqp=CAE"
+                                alt="Sunset in the mountains">
+                            <div
+                                class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                            </div>
+                        </a>
+                        <a href="#!">
+                            <div
+                                class="absolute bottom-0 left-0 bg-indigo-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                Shop Now
+                            </div>
+                        </a>
+
+                        <a href="!#">
+                            <div
+                                class="text-sm absolute top-0 right-0 bg-indigo-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                <span class="font-bold">20</span>
+                                <small>March</small>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-6 py-4">
+
+                        <a href="#"
+                            class="font-semibold text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out">Mini
+                            Purses Popular Women Design Chain Handbag Popular Luxury ...</a>
+                        <p class="text-gray-500 text-sm">
+
+                            ₹1,515.15 + tax($18.05 + tax)
+                        </p>
+                    </div>
+                    <div class="px-6 py-4 flex flex-row items-center">
+                        <span href="#"
+                            class="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center">
+                            <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span class="ml-1">3 mins read</span></span>
+                    </div>
+                </div>
+                <div class="rounded overflow-hidden shadow-lg">
+
+                    <a href="#"></a>
+                    <div class="relative">
+                        <a href="#">
+                            <img class="w-full"
+                                src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTk10DCwCnB_nP8or2WJzHQOS25MGpkZU_-Ns5uhu4zdwE9zwgEJZKqlCRIlf-iQAPgnW2yZ5C9b3WKBEsJHibIDGeUvLdGVtMZastSxR0&usqp=CAE"
+                                alt="Sunset in the mountains">
+                            <div
+                                class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                            </div>
+                        </a>
+                        <a href="#!">
+                            <div
+                                class="absolute bottom-0 left-0 bg-indigo-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                Shop Now
+                            </div>
+                        </a>
+
+                        <a href="!#">
+                            <div
+                                class="text-sm absolute top-0 right-0 bg-indigo-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                <span class="font-bold">15</span>
+                                <small>April</small>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-6 py-4">
+
+                        <a href="#"
+                            class="font-semibold text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out">Black
+                            Sling Bag Stylish Women Sling Bag With Chain Strap</a>
+                        <p class="text-gray-500 text-sm">
+                            ₹989.00.
+
+                        </p>
+                    </div>
+                    <div class="px-6 py-4 flex flex-row items-center">
+                        <span href="#"
+                            class="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center">
+                            <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span class="ml-1">6 mins read</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
+                <div class="rounded overflow-hidden shadow-lg">
+
+                    <a href="#"></a>
+                    <div class="relative">
+                        <a href="#">
+                            <img class="w-full"
+                                src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQk-IsiqB3_dX9SIY3PyRK4A27m4gI04D-UQ-ISlatj_yTqMuGlOTP3k214Wb-QTTQOL4YeMOhDlLx20ac5UDMtk_mw_jZ764DQ8KZNotVsqNvPPxlFkBfsAw&usqp=CAE"
+                                alt="Sunset in the mountains">
+                            <div
+                                class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                            </div>
+                        </a>
+                        <a href="#!">
+                            <div
+                                class="absolute bottom-0 left-0 bg-indigo-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                Shop Now
+                            </div>
+                        </a>
+
+                        <a href="!#">
+                            <div
+                                class="text-sm absolute top-0 right-0 bg-indigo-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                <span class="font-bold">27</span>
+                                <small>March</small>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-6 py-4">
+
+                        <a href="#"
+                            class="font-semibold text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out">Yellow
+                            Chimes Metal Bracelet
+                        </a>
+                        <p class="text-gray-500 text-sm">
+                            ₹199.00
+                        </p>
+                    </div>
+                    <div class="px-6 py-4 flex flex-row items-center">
+                        <span href="#" class="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
+                            <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256
+			c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128
+			c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span class="ml-1">6 mins ago</span></span>
+                    </div>
+                </div>
+                <div class="rounded overflow-hidden shadow-lg">
+                    <a href="#"></a>
+                    <div class="relative">
+                        <a href="#">
+                            <img class="w-full"
+                                src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRdYW1cRZXxc4oY39PP3eMQ5uo6DTIr24B4aEq8mN35mAN7O770lGsx_GOIv2qlZfpuY_6kKuGBM2iUU0jVKTETpNVO9SuUr7PlYy5HKtLNzsmEt7xo3a3VDg&usqp=CAE"
+                                alt="Sunset in the mountains">
+                            <div
+                                class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                            </div>
+                        </a>
+                        <a href="#!">
+                            <div
+                                class="absolute bottom-0 left-0 bg-indigo-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                Shop Now
+                            </div>
+                        </a>
+
+                        <a href="!#">
+                            <div
+                                class="text-sm absolute top-0 right-0 bg-indigo-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                <span class="font-bold">20</span>
+                                <small>March</small>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-6 py-4">
+
+                        <a href="#"
+                            class="font-semibold text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out">I
+                            Jewels Women Pink & Rose Gold-Plated Wraparound Bracelet (2.6) by Myntra</a>
+                        <p class="text-gray-500 text-sm">
+                            ₹459.00
+                        </p>
+                    </div>
+                    <div class="px-6 py-4 flex flex-row items-center">
+                        <span href="#"
+                            class="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center">
+                            <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span class="ml-1">3 mins read</span></span>
+                    </div>
+                </div>
+                <div class="rounded overflow-hidden shadow-lg">
+
+                    <a href="#"></a>
+                    <div class="relative">
+                        <a href="#">
+                            <img class="w-full"
+                                src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTb6AyKPM8jSKvUSzQSoAlvfKeZsdlZGVnNDn9CPRxDp6BSX1ujRG3CeyfgTzPtcSqOTs4nay9WVW0q8a8Yp5c-_EBIUGdzEMs8YqKIUswodKj_4KyQ_aO9&usqp=CAE"
+                                alt="Sunset in the mountains">
+                            <div
+                                class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                            </div>
+                        </a>
+                        <a href="#!">
+                            <div
+                                class="absolute bottom-0 left-0 bg-indigo-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                Shop Now
+                            </div>
+                        </a>
+
+                        <a href="!#">
+                            <div
+                                class="text-sm absolute top-0 right-0 bg-indigo-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                <span class="font-bold">15</span>
+                                <small>April</small>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-6 py-4">
+
+                        <a href="#"
+                            class="font-semibold text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out">Yellow
+                            Chimes Metal Crystal Silver Bracelet
+                        </a>
+                        <p class="text-gray-500 text-sm">
+                            ₹219.00
+                        </p>
+                    </div>
+                    <div class="px-6 py-4 flex flex-row items-center">
+                        <span href="#"
+                            class="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center">
+                            <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span class="ml-1">6 mins read</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- gallery -->
+        <h1 id="products" class="text-4xl	font-bold	text-red-800	font-serif	text-center">PRODUCTS GALLERY</h1>
+
+        <div id="gallery" class=" m-10 columns-1 md:columns-2 xl:columns-3 gap-7 ">
+            <div class=" break-inside-avoid mb-8 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <img class="h-auto max-w-full rounded-lg"
+                    src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSbqyjeZLMlvyROzkymC_Hnz1nAHVE3noXW-1emxtPUjix77GBefaxAI5yzxWAGHl8uc7RyJJzEeYEbSqiyh4wDb_LGuyMd2rssJp6mmGfs&usqp=CAE"
+                    alt="Gallery image" />
+            </div>
+            <div class=" break-inside-avoid  mb-8 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <img class="h-auto max-w-full rounded-lg"
+                    src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQl47Mm-NALYcJGXHn2mrnaPDelIF2Q4mjmg86UPwYAuKazpEDNBub_-WMfaZZ5BBqvzglqCW55aXuh_NJn6HQhXUd5kCl389DOWrSlNN12&usqp=CAE"
+                    alt="Gallery image" />
+            </div>
+            <div class=" break-inside-avoid  mb-8 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <img class="h-auto max-w-full rounded-lg"
+                    src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTM18G3tql5DAGloYcCXXTaCnE47whXu1b4nvpqInywVdtwzxKDn2A1ZlgexgcE88LRY3XvkpLrMJlbT-AeV2xgp2zISOg0JYScGhs-728uBUfVQZAXgdUM&usqp=CAE"
+                    alt="Gallery image" />
+            </div>
+            <div class=" break-inside-avoid  mb-8 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <img class="h-auto max-w-full rounded-lg"
+                    src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTQSjzzh_DCbZ4pFAEEePjABrpPEsLlIQg6Qj3ssvVYQQvIByIJlEITVNEcIg8NFsJ2qVTpxDvtbZVQGzlPuaNleyWC7Bc77TFfd7QQPh_Mxuo_isJJjpZSLg&usqp=CAE"
+                    alt="Gallery image" />
+            </div>
+            <div class=" break-inside-avoid  mb-8 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <img class="h-auto max-w-full rounded-lg"
+                    src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTupP6c9gAeb_tdHAPDNl05bfYZwTia63-YJER7HI4JQA0-2vy3RjGHbvpDJqjDg2E8B7d2QSAgw4ESMTFfth2iFPMImLk18f0dnvRlpwU&usqp=CAE"
+                    alt="Gallery image" />
+            </div>
+            <div class=" break-inside-avoid  mb-8 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                <img class="h-auto max-w-full rounded-lg"
+                    src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRe5IyJULdskmFPqHsEEyW-Z1OS4-Gg5K-M1lwY3VtN9VEEyrozzR7vH3fy-cAXEFpYUzI2eV9dly3nN7dmQQpkb2IYtXshzzRwSgORUrnpHMvFHqU55CgV&usqp=CAE"
+                    alt="Gallery image" />
+            </div>
+        </div>
+
+        <hr>
+        <!-- footer -->
+        <footer class="bg-black flex flex-col space-y-10 justify-center rounded mb-0">
+
+            <nav class="flex justify-center flex-wrap gap-6 mt-10 text-white font-medium">
+                <a class="hover:text-gray-100" href="#">Home</a>
+                <a class="hover:text-gray-100" href="#">About</a>
+                <a class="hover:text-gray-100" href="#">Services</a>
+                <a class="hover:text-gray-100" href="#">Media</a>
+                <a class="hover:text-gray-100" href="#">Gallery</a>
+                <a class="hover:text-gray-100" href="#">Contact</a>
+            </nav>
+
+            <div class="flex justify-center space-x-5">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.icons8.com/fluent/30/000000/facebook-new.png" />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.icons8.com/fluent/30/000000/linkedin-2.png" />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" />
+                </a>
+                <a href="https://messenger.com" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.icons8.com/fluent/30/000000/facebook-messenger--v2.png" />
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.icons8.com/fluent/30/000000/twitter.png" />
+                </a>
+            </div>
+            <p class="text-center text-white font-medium">&copy; 2022 Company Ltd. All rights reservered.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
